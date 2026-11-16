@@ -27,6 +27,8 @@ npm run build
 
 Replace the sample above with Greater Shine’s actual domain. The build writes the static site to `dist/`, creates a sitemap for the known pages, and adds the sitemap location to `robots.txt`. Without `SITE_URL`, the build still works but omits the sitemap and leaves the runtime canonical URL based on the current host.
 
+Vercel is configured in `vercel.json` to run `npm run build`, publish `dist/`, and rewrite deep links to the SPA entry point. Commit and redeploy these settings so Vercel serves the generated static files instead of trying to invoke the local Node development server.
+
 ## Editable details
 
 - Institute address and working hours: top-level constants in `app.js`.
