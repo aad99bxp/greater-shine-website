@@ -1,11 +1,12 @@
-import { mkdir, readFile, writeFile, cp } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, cp, rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const dist = resolve(root, 'dist');
+await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
-for (const file of ['index.html', 'app.js', 'styles.css', 'config.js']) {
+for (const file of ['index.html', 'site.js', 'styles.css', 'config.js']) {
   await cp(resolve(root, file), resolve(dist, file));
 }
 await cp(resolve(root, 'public'), dist, { recursive: true, force: true });

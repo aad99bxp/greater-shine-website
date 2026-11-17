@@ -1,6 +1,6 @@
 # Greater Shine website
 
-A responsive, dependency-free website for Greater Shine. Course information is held centrally in `app.js`; contact and integration details are in `config.js`.
+A responsive, dependency-free website for Greater Shine. Course information is held centrally in `site.js`; contact and integration details are in `config.js`.
 
 ## Run locally
 
@@ -31,9 +31,9 @@ Vercel is configured in `vercel.json` to run `npm run build`, publish `dist/`, a
 
 ## Editable details
 
-- Institute address and working hours: top-level constants in `app.js`.
+- Institute address and working hours: top-level constants in `site.js`.
 - Phone, WhatsApp, email, backend endpoint and canonical domain: `config.js`.
-- Course names, descriptions, topics and FAQs: `courses` array in `app.js`.
+- Course names, descriptions, topics and FAQs: `courses` array in `site.js`.
 - Original supplied logo and generated classroom hero: `public/assets/`.
 
 The hero image was generated for this site. Course cards use custom SVG iconography.
